@@ -83,7 +83,7 @@ root.title("Budget Tracker")
 root.geometry("800x600")
 
 # Create a notebook for tabs
-notebook = ctk.CTkTabView(root)
+notebook = ctk.CTkTabview(root)
 notebook.pack(fill=ctk.BOTH, expand=True, pady=5, padx=5)
 
 # Create tabs for adding income, expenses, and goals
