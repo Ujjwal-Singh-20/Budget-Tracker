@@ -86,17 +86,24 @@ root.geometry("800x600")
 notebook = ctk.CTkTabview(root)
 notebook.pack(fill=ctk.BOTH, expand=True, pady=5, padx=5)
 
-# Create tabs for adding income, expenses, and goals
-income_tab = ctk.CTkFrame(notebook)
-expense_tab = ctk.CTkFrame(notebook)
-goals_tab = ctk.CTkFrame(notebook)
 
-notebook.add(income_tab, text="Add Income")
-notebook.add(expense_tab, text="Add Expense")
+# Create tabs for adding income, expenses, and goals
+
+Add_income = notebook.add("Add Income")
+Add_expense = notebook.add("Add Expense")
+
+income_tab = ctk.CTkFrame(Add_income)
+expense_tab = ctk.CTkFrame(Add_expense)
+
+
+
+# goals_tab = ctk.CTkFrame(Add_goal)       #add this after creating - Add_goal = notebok.add("Add Goal")
+
+
 
 # Create a frame for the "Visualization" tab
-visualization_tab = ctk.CTkFrame(notebook)
-notebook.add(visualization_tab, text="Visualization")
+Visualization = notebook.add("Visualization")
+visualization_tab = ctk.CTkFrame(Visualization)
 
 # Function to add income or expense
 def add_transaction(account_name, category, amount, transaction_type, conn):
@@ -160,8 +167,8 @@ def update_summary_text(account_name, transaction_type, conn):
     summary_text.config(state=tk.DISABLED)
 
 # Summary Tab
-summary_tab = ctk.CTkFrame(notebook)
-notebook.add(summary_tab, text="Display Summary")
+Display_summary = notebook.add("Display Summary")
+summary_tab = ctk.CTkFrame(Display_summary)
 
 summary_account_label = ctk.CTkLabel(summary_tab, text="Account Name:")
 summary_account_label.pack(pady=5)
@@ -202,8 +209,8 @@ def create_bar_chart(account_name, conn):
     canvas.get_tk_widget().pack(pady=5)
 
 # Budget Analysis Tab
-analysis_tab = ctk.CTkFrame(notebook)
-notebook.add(analysis_tab, text="Budget Analysis")
+Budget_analysis = notebook.add("Budget Analysis")
+analysis_tab = ctk.CTkFrame(Budget_analysis)
 
 analysis_account_label = ctk.CTkLabel(analysis_tab, text="Account Name:")
 analysis_account_label.pack(pady=5)
