@@ -1,4 +1,5 @@
 import customtkinter as ctk  # Imports customTkinter
+import tkinter as tk
 import tkinter.font as tkFont
 import sqlite3
 import time
@@ -81,6 +82,8 @@ def create_or_open_database(account_name):
 root = ctk.CTk()  # Change widgets
 root.title("Budget Tracker")
 root.geometry("800x600")
+
+root.iconbitmap("image.ico")  # Add icon to the window
 
 # Create a notebook for tabs
 notebook = ctk.CTkTabview(root)
